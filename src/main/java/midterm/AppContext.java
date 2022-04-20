@@ -13,8 +13,7 @@ import midterm.service.UserService;
 
 @Configuration
 @ComponentScan(basePackages= {"midterm"})
-public class AppContext {
-	
+public class AppContext {	
 	@Bean
 	public Scanner scanner() {
 		return new Scanner(System.in);

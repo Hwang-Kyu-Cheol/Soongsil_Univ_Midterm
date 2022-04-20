@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Validator {
 	
+	//항목을 선택하는 입력이 유효한지 판단하는 함수
 	public int isValidateChoiceNumber(int maxNum, String choiceNumberStr) throws NotValidateInputException {
 		int choiceNumber = 0;
 		
@@ -24,6 +25,7 @@ public class Validator {
 		return choiceNumber;
 	}
 	
+	//아이디, 비밀번호, 이름, 이메일, 휴대폰전화번호 입력이 유효한지 판단하는 함수
 	public void isValidate(String query, String content) throws NotValidateInputException {
 		String pattern = "";
 		String inputType = "";

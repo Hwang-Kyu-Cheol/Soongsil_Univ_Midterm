@@ -21,6 +21,7 @@ public class UserController {
 	private final Validator validator;
 	private final Scanner scanner;
 	
+	//자동 의존 주입
 	@Autowired
 	public UserController(UserService userService, Validator validator, Scanner scanner) {
 		this.userService = userService;

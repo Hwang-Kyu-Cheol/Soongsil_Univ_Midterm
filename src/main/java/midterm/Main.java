@@ -19,8 +19,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppContext.class);
-		
-		
+			
 		UserController userController = ctx.getBean("userController", UserController.class);
 		Validator validator = ctx.getBean("validator", Validator.class);
 		Scanner scanner = ctx.getBean("scanner", Scanner.class);
@@ -34,6 +33,7 @@ public class Main {
 		System.out.println("회원관리 시스템에 오신것을 환영합니다!\n");
 		
 		while(true) {
+			//로그인이 안되어있을 경우
 			while(!isLogIn) {
 				
 				System.out.println("원하시는 항목을 선택하세요.");
@@ -68,12 +68,13 @@ public class Main {
 					System.out.println("로그인 완료! \n");
 					System.out.println("--------------------  \n");
 					break;
-				//종료
+				//프로그램 종료
 				case 3:
 					System.out.println("이용해주셔서 감사합니다. 프로그램을 종료합니다.");
 					return;
 				}	
 			}
+			//로그인이 되어있는 경우
 			while(isLogIn) {
 				
 				try {
@@ -95,6 +96,7 @@ public class Main {
 				}
 				
 				switch(choiceNumber) {
+				//비밀번호 변경
 				case 1:
 					System.out.println("===== 비밀번호 변경 =====");
 					
@@ -106,6 +108,7 @@ public class Main {
 					
 					System.out.println("비밀번호 변경 완료! \n");
 					break;
+				//회원정보 조회
 				case 2:
 					System.out.println("===== 회원정보 조회 =====");
 					
@@ -117,6 +120,7 @@ public class Main {
 					
 					System.out.println("회원정보 조회 완료! \n");
 					break;
+				//회원정보 수정
 				case 3:
 					System.out.println("===== 회원정보 수정 =====");
 					
@@ -128,6 +132,7 @@ public class Main {
 					
 					System.out.println("회원정보 수정 완료! \n");
 					break;
+				//회원 탈퇴
 				case 4:
 					System.out.println("===== 회원 탈퇴 =====");
 					
@@ -144,6 +149,7 @@ public class Main {
 						isLogIn = false;
 					}
 					break;
+				//로그아웃
 				case 5:
 					System.out.println("===== 로그아웃 =====");
 					
@@ -169,6 +175,7 @@ public class Main {
 						isLogIn = false;
 					}
 					break;
+				//프로그램 종료
 				case 6:
 					System.out.println("이용해주셔서 감사합니다. 프로그램을 종료합니다.");
 					return;

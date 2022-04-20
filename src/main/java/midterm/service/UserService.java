@@ -17,6 +17,7 @@ public class UserService {
 	
 	private final UserRepository userRepository;
 	
+	//자동 의존 주입
 	@Autowired
 	public UserService(UserRepository userRepository) {
 		this.userRepository = userRepository;
